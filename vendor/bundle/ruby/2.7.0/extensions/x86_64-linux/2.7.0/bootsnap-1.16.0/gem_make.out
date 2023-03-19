@@ -1,0 +1,15 @@
+current directory: /home/lewis/pizza-code-challenge/pizza-cc/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.16.0/ext/bootsnap
+/home/lewis/.rbenv/versions/2.7.6/bin/ruby -I /home/lewis/.rbenv/versions/2.7.6/lib/ruby/2.7.0 -r ./siteconf20230319-9282-1740cfn.rb extconf.rb
+creating Makefile
+
+current directory: /home/lewis/pizza-code-challenge/pizza-cc/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.16.0/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /home/lewis/pizza-code-challenge/pizza-cc/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.16.0/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.so
+
+current directory: /home/lewis/pizza-code-challenge/pizza-cc/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.16.0/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20230319-9282-1ib1gee/bootsnap

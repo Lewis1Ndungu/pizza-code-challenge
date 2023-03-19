@@ -1,0 +1,16 @@
+current directory: /home/lewis/pizza-code-challenge/pizza-cc/vendor/bundle/ruby/2.7.0/gems/debug-1.7.1/ext/debug
+/home/lewis/.rbenv/versions/2.7.6/bin/ruby -I /home/lewis/.rbenv/versions/2.7.6/lib/ruby/2.7.0 -r ./siteconf20230319-9282-6677pj.rb extconf.rb
+creating Makefile
+
+current directory: /home/lewis/pizza-code-challenge/pizza-cc/vendor/bundle/ruby/2.7.0/gems/debug-1.7.1/ext/debug
+make "DESTDIR=" clean
+
+current directory: /home/lewis/pizza-code-challenge/pizza-cc/vendor/bundle/ruby/2.7.0/gems/debug-1.7.1/ext/debug
+make "DESTDIR="
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/lewis/pizza-code-challenge/pizza-cc/vendor/bundle/ruby/2.7.0/gems/debug-1.7.1/ext/debug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20230319-9282-132dmaj/debug
