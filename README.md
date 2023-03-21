@@ -1,53 +1,12 @@
-# Rails Code Challenge - Pizza Restaurants
+Run bundle install
+Migrate and seed the data the start server
 
-For this assessment, you'll be working with a Pizza Restaurant domain.
 
-In this repo, there is a Rails application with some features built out. There
-is also a fully built React frontend application, so you can test if your API is
-working.
 
-Your job is to build out the Rails API to add the functionality described in the
-deliverables below.
+Project Guidelines
+Your project should conform to the following set of guidelines:
 
-## Setup
-
-To download the dependencies for the frontend and backend, run:
-
-```sh
-bundle install
-npm install --prefix client
-```
-
-There is some starter code in the `db/seeds.rb` file so that once you've
-generated the models, you'll be able to create data to test your application.
-
-You can run your Rails API on [`localhost:3000`](http://localhost:3000) by running:
-
-```sh
-rails s
-```
-
-You can run your React app on [`localhost:4000`](http://localhost:4000) by running:
-
-```sh
-npm start --prefix client
-```
-
-You are not being assessed on React, and you don't have to update any of the React
-code; the frontend code is available just so that you can test out the behavior
-of your API in a realistic setting.
-
-There are also tests included which you can run using `rspec` to check your work.
-
-Depending on your preference, you can either check your progress by:
-
-- Running `rspec` and seeing if your code passes the tests
-- Running the React application in the browser and interacting with the API via
-  the frontend
-- Running the Rails server and using Postman to make requests
-
-## Models
-
+ Models
 You need to create the following relationships:
 
 - A `Restaurant` has many `Pizza`s through `RestaurantPizza`
@@ -56,38 +15,25 @@ You need to create the following relationships:
 
 Start by creating the models and migrations for the following database tables:
 
-![domain diagram](domain.png)
+domain-1.png
 
-If you use a Rails generator to create the models, make sure to use the
-`--no-test-framework` flag to avoid overwriting the test files.
+Add any code needed in the model files to establish the relationships. Then, run the migrations.
 
-Add any code needed in the model files to establish the relationships.
+ You are welcome to generate your own seed data to test the application.
 
-Then, run the migrations and seed file:
-
-```sh
-rails db:migrate db:seed
-```
-
-> If you aren't able to get the provided seed file working, you are welcome to
-> generate your own seed data to test the application.
-
-## Validations
-
+Validations
 Add validations to the `RestaurantPizza` model:
 
 - must have a `price` between 1 and 30
 
-## Routes
-
+Routes
 Set up the following routes. Make sure to return JSON data in the format
 specified along with the appropriate HTTP verb.
 
-### GET /restaurants
-
+GET /restaurants
 Return JSON data in the format below:
 
-```json
+```
 [
   {
     "id": 1,
@@ -102,11 +48,10 @@ Return JSON data in the format below:
 ]
 ```
 
-### GET /restaurants/:id
-
+GET /restaurants/:id
 If the `Restaurant` exists, return JSON data in the format below:
 
-```json
+```
 {
   "id": 1,
   "name": "Sottocasa NYC",
@@ -129,14 +74,13 @@ If the `Restaurant` exists, return JSON data in the format below:
 If the `Restaurant` does not exist, return the following JSON data, along with
 the appropriate HTTP status code:
 
-```json
+```
 {
   "error": "Restaurant not found"
 }
 ```
 
-### DELETE /restaurants/:id
-
+DELETE /restaurants/:id
 If the `Restaurant` exists, it should be removed from the database, along with
 any `RestaurantPizza`s that are associated with it (a `RestaurantPizza` belongs
 to a `Restaurant`, so you need to delete the `RestaurantPizza`s before the
@@ -148,17 +92,16 @@ appropriate HTTP status code.
 If the `Restaurant` does not exist, return the following JSON data, along with
 the appropriate HTTP status code:
 
-```json
+```
 {
   "error": "Restaurant not found"
 }
 ```
 
-### GET /pizzas
-
+GET /pizzas
 Return JSON data in the format below:
 
-```json
+```
 [
   {
     "id": 1,
@@ -173,13 +116,12 @@ Return JSON data in the format below:
 ]
 ```
 
-### POST /restaurant_pizzas
-
+POST /restaurant_pizzas
 This route should create a new `RestaurantPizza` that is associated with an
 existing `Pizza` and `Restaurant`. It should accept an object with the following
 properties in the body of the request:
 
-```json
+```
 {
   "price": 5,
   "pizza_id": 1,
@@ -190,7 +132,7 @@ properties in the body of the request:
 If the `RestaurantPizza` is created successfully, send back a response with the data
 related to the `Pizza`:
 
-```json
+```
 {
   "id": 1,
   "name": "Cheese",
@@ -201,8 +143,7 @@ related to the `Pizza`:
 If the `RestaurantPizza` is **not** created successfully, return the following
 JSON data, along with the appropriate HTTP status code:
 
-```json
+```
 {
   "errors": ["validation errors"]
 }
-```
