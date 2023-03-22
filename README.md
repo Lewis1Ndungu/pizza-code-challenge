@@ -1,5 +1,5 @@
 Run bundle install
-Migrate and seed the data the start server
+Migrate and seed the data then start server
 
 
 
